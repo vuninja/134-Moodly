@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     color: #FFFFFF;
     background: #424874;
   }
+  
+  h1, h2, h3, h4 {
+    color: #FFFFFF;
+  }
 `;
 
 export const Row = styled.div`

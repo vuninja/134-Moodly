@@ -9,6 +9,7 @@ import {
 import { GlobalStyle } from "./styles";
 import Home from "./pages/Home"
 import SignUp from "./pages/SignUp";
+import Main from "./pages/Main";
 
 export default function App() {
     return (
@@ -24,6 +25,10 @@ export default function App() {
                 </Route>
                 <Route exact path="/home">
                     {/*<About/>*/}
+                </Route>
+                <Route exact path="/main">
+                    <Main/>
+                    <GlobalStyle/>
                 </Route>
             </Switch>
         </Router>

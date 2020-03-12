@@ -26,6 +26,8 @@ export default function PageLayout(props) {
                 <Link to="/">Account</Link>
                 <Link to="/">About</Link>
                 <Link to="sign-up">Sign Up</Link>
+                <Link to="main">MAIN - TEST</Link>
+
             </div>
 
         </Nav>
