@@ -27,8 +27,8 @@ export default function Home() {
                     <Col size={3}/>
                     <Col size={2}>
                         <Typography style={{lineHeight: 1.75, color: '#FFFFFF'}}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                            ipsum dolor sit amet, consectetur
+                            Moodly is more than just a journal. Track your moods, get readings/articles to help 
+                            improve your mood, and become aware of your mental progress!
                         </Typography>
                     </Col>
                     <Col size={3}/>

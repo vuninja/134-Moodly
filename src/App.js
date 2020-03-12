@@ -10,6 +10,7 @@ import { GlobalStyle } from "./styles";
 import Home from "./pages/Home"
 import SignUp from "./pages/SignUp";
 import Main from "./pages/Main";
+import Survey from "./pages/Survey";
 
 export default function App() {
     return (
@@ -28,6 +29,10 @@ export default function App() {
                 </Route>
                 <Route exact path="/main">
                     <Main/>
+                    <GlobalStyle/>
+                </Route>
+                <Route exact path="/question">
+                    <Survey/>
                     <GlobalStyle/>
                 </Route>
             </Switch>

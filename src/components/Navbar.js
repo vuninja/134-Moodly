@@ -18,16 +18,17 @@ const Nav = styled.nav`
   }
 `;
 
-export default function PageLayout(props) {
+export default function Navbar(props) {
+
+    const { user } = props;
+
     return (
         <Nav>
             <Link to="/">Moodly</Link>
             <div>
                 <Link to="/">Account</Link>
                 <Link to="/">About</Link>
-                <Link to="sign-up">Sign Up</Link>
-                <Link to="main">MAIN - TEST</Link>
-
+                {user?<Link to="/">Hello {String(sessionStorage.getItem("firstName"))}</Link>:<Link to="sign-up">Sign Up</Link>}
             </div>
 
         </Nav>

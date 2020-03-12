@@ -8,7 +8,7 @@ import { Row, Col } from 'antd';
 import '../Calendar.css';
 
 import PageLayout from "../components/Layout";
-import RatingImg from "../img/rating.png"
+import RatingImg from "../img/rating.png";
 
 export default function Home() {
     const [date, setDate] = useState(new Date());
