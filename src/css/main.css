@@ -17,3 +17,7 @@
 .five-dates {
     background-color: red;
 }
+
+.ant-btn:hover {
+    border-color: transparent;
+}

@@ -67,7 +67,7 @@ function NormalSignUp(props) {
                 sessionStorage.setItem("user", values["firstName"] + values["lastName"]);
                 sessionStorage.setItem("firstName", values["firstName"]);
                 sessionStorage.setItem("email", values["email"]);
-                history.push('');
+                history.push('/question');
                 // console.log('JSON: '+ JSON.stringify(data)); // JSON-string from `response.json()` call
             } catch (error) {
                 console.log(error);

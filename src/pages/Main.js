@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Calendar from 'react-calendar';
 
-import { Button, Card, Modal, Input } from 'antd';
+import { Button, Card, Modal, Input, notification  } from 'antd';
 
 import { Row, Col } from 'antd';
 import '../Calendar.css';
@@ -24,9 +24,14 @@ export default function Home() {
     const [day2, setDay2] = useState([]);
     const [day1, setDay1] = useState([]);
     const [visible, setVisible] = useState(false);
+    const [text, setText] = useState("");
 
     const { Meta } = Card;
     const { TextArea } = Input;
+
+    useEffect(() => {
+        openNotification();
+    },[]);
 
     const handleOpenModal = (value, event) => {
         setDate(value);
@@ -34,6 +39,7 @@ export default function Home() {
     };
 
     const handleCloseModal = () => {
+        setText("");
         setVisible(false)
     };
 
@@ -63,6 +69,17 @@ export default function Home() {
         }
     }
 
+    const openNotification = () => {
+        notification.open({
+          message: 'Did you know?',
+          description:
+            'Scroll down a little to see the resources that we found to be helpful to users like you!',
+          onClick: () => {
+            console.log('Notification Clicked!');
+          },
+        });
+      };
+
     return (
         <PageLayout>
             <Modal
@@ -88,7 +105,7 @@ export default function Home() {
                     <img src={OneImg}/>
                 </Button>
                 <h4 style={{color: '#474747', marginTop: '4em'}}>Journal</h4>
-                <TextArea rows={4}/>
+                <TextArea rows={4} value={text} onChange={event => setText(event.target.value)}/>
             </Modal>
 
             <Row style={{marginTop: '8em'}}>
@@ -140,8 +157,10 @@ export default function Home() {
                                     alt="example"
                                     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                                 />
-                            }>
-                        <Meta title="Europe Street beat" description="www.instagram.com"
+                            }
+                            onClick={() => window.open("https://www.forbes.com/sites/jennagoudreau/2013/03/20/12-ways-to-eliminate-stress-at-work/#5161c1f87f29", '_blank')}
+                        >
+                        <Meta title="12 Ways To Eliminate Stress At Work" description="www.forbes.com"
                             style={{background: "none"}}/>
                         </Card>
                     </Col>
@@ -152,8 +171,9 @@ export default function Home() {
                                     alt="example"
                                     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                                 />
-                            }>
-                            <Meta title="Europe Street beat" description="www.instagram.com"
+                            }
+                            onClick={() => window.open("https://www.flexjobs.com/blog/post/how-to-meditate-at-work/", '_blank')}>
+                            <Meta title="How to meditate at work" description="www.flexjobs.com"
                                   style={{background: "none"}}/>
                         </Card>
                     </Col>
@@ -164,8 +184,9 @@ export default function Home() {
                                     alt="example"
                                     src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                                 />
-                            }>
-                            <Meta title="Europe Street beat" description="www.instagram.com"
+                            }
+                            onClick={() => window.open("https://us.foursigmatic.com/blog/why-am-i-so-tired", "_blank")}>
+                            <Meta title="Why am I so tired?" description="us.foursigmatic.com"
                                   style={{background: "none"}}/>
                         </Card>
                     </Col>
